@@ -1,4 +1,4 @@
-# Build and Deploy a React Native App | 2023 React Native Course Tutorial for Beginners
+# Job Finder using React Native
 ![RN Course](https://i.ibb.co/vvpLGDm/Screenshot-2023-03-20-022645.png)
 
 ## Introduction
