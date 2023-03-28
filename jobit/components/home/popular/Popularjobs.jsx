@@ -7,7 +7,7 @@ import styles from "./popularjobs.style";
 import useFetch from "../../../hook/useFetch";
 import { useState } from "react";
 
-const Popularjobs = () => {
+const Popularjobs = ({ data, isLoading, error }) => {
     const router = useRouter();
 
     const [selectedJob, setSelectedJob] = useState();
@@ -15,8 +15,6 @@ const Popularjobs = () => {
     const handleCardPress = (item) => {
         router.push(`/job-details/${item?.job_id}`);
     };
-
-    const { data, isLoading, error } = useFetch("search", { query: "React developer", num_pages: 1 });
 
     return (
         <View style={styles.container}>

@@ -7,8 +7,11 @@ import { Stack, useRouter } from "expo-router";
 import { COLORS, icons, images, SIZES } from "../constants";
 
 import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome } from "../components";
+import useFetch from "../hook/useFetch";
 
 const Home = () => {
+    const { data, isLoading, error } = useFetch("search", { query: "React developer", num_pages: 1 });
+
     const router = useRouter();
     const [searchTerm, setSearchTerm] = useState("");
     return (
@@ -43,8 +46,8 @@ const Home = () => {
                             }
                         }}
                     />
-                    <Popularjobs />
-                    <Nearbyjobs />
+                    <Popularjobs data={data} isLoading={isLoading} error={error} />
+                    <Nearbyjobs data={data} isLoading={isLoading} error={error} />
                 </View>
             </ScrollView>
         </SafeAreaView>

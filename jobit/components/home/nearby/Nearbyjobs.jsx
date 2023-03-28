@@ -6,10 +6,8 @@ import NearByJobCard from "../../common/cards/nearby/NearbyJobCard";
 import styles from "./nearbyjobs.style";
 import useFetch from "../../../hook/useFetch";
 
-const Nearbyjobs = () => {
+const Nearbyjobs = ({ data, isLoading, error }) => {
     const router = useRouter();
-
-    const { data, isLoading, error } = useFetch("search", { query: "React developer", num_pages: 1 });
 
     return (
         <View style={styles.container}>
